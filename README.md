@@ -8,9 +8,11 @@ Open [`Code/reproduce.ipynb`](Code/reproduce.ipynb) and run all cells in order:
 4. **Image-level metrics:** Calculate Dice, thickness/MAE, and SRF area for new predictions and the saved 12-case comparison.
 5. **Display:** Show grouped summaries and image-level results.
 
-The notebook defines Y-Net internally, learns pixel labels from the training images, and predicts a segmentation mask for each test OCT. No project-specific `.py` module is imported. Weights, predictions, and results stay in memory; the notebook does not save a checkpoint or export tables. Run from the top after restarting the kernel.
+The notebook defines Y-Net internally, learns pixel labels from the training images, and predicts a segmentation mask for each test OCT. No project-specific `.py` module is imported. Weights, predictions, and results stay in memory; the notebook does not save a checkpoint or export tables. The committed notebook includes the latest run's displayed outputs.
 
 Place the dataset under `Data/`. OCT data are not included. Python libraries such as PyTorch, NumPy, SciPy, pandas, Pillow, and IPython are still required.
+
+Thickness is reported over all 512 columns and the centered 3 mm range (columns `[136, 376)`).
 
 ## Reference and license
 
