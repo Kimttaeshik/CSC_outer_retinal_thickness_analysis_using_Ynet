@@ -8,12 +8,12 @@ Open [`Code/reproduce.ipynb`](Code/reproduce.ipynb) and run all cells in order:
 4. **Image-level metrics:** Calculate Dice, thickness/MAE, and SRF area for new predictions and the saved 12-case comparison.
 5. **Display:** Show grouped summaries and image-level results.
 
-Y-Net learns pixel labels from the training images and predicts a segmentation mask for each test OCT. Weights, predictions, and results stay in memory; the notebook does not save a checkpoint or export tables. Run from the top after restarting the kernel.
+The notebook defines Y-Net internally, learns pixel labels from the training images, and predicts a segmentation mask for each test OCT. No project-specific `.py` module is imported. Weights, predictions, and results stay in memory; the notebook does not save a checkpoint or export tables. Run from the top after restarting the kernel.
 
-Place the dataset under `Data/`. The notebook searches for `ynet_model.py` in the configured local model folders; edit `MODEL_CODE_CANDIDATES` in the setup cell if your copy is elsewhere. The OCT data are not included.
+Place the dataset under `Data/`. OCT data are not included. Python libraries such as PyTorch, NumPy, SciPy, pandas, Pillow, and IPython are still required.
 
 ## Reference and license
 
 The retinal OCT Y-Net paper is Farshad et al., [“Y-Net: A Spatiospectral Network for Retinal OCT Segmentation,” MICCAI 2022](https://doi.org/10.1007/978-3-031-16434-7_56) — not CVPR. The [official implementation](https://github.com/azadef/ynet) is marked [Apache-2.0](https://github.com/azadef/ynet/blob/master/LICENSE).
 
-The notebook loads a separate local `ynet_model.py`, whose license is not included in the inspected folder. Confirm that file's redistribution rights before publishing it. Confirm data-sharing permission before publishing OCT images or masks.
+The embedded model code follows the [official Y-Net implementation](https://github.com/azadef/ynet) and uses FFC code from [pkumivision/FFC](https://github.com/pkumivision/FFC); both repositories are marked Apache-2.0. This repository includes the Apache-2.0 license. Confirm data-sharing permission before publishing OCT images or masks.
