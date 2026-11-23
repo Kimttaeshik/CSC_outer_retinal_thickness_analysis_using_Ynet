@@ -10,7 +10,7 @@ Open [`Code/reproduce.ipynb`](Code/reproduce.ipynb) and run all cells in order:
 
 Y-Net learns pixel labels from the training images and predicts a segmentation mask for each test OCT. Weights, predictions, and results stay in memory; the notebook does not save a checkpoint or export tables. Run from the top after restarting the kernel.
 
-Place the dataset under `Data/` and set `MODEL_CODE` to the folder containing `ynet_model.py` in the notebook setup cell. The OCT data are not included.
+Place the dataset under `Data/`. The notebook searches for `ynet_model.py` in the configured local model folders; edit `MODEL_CODE_CANDIDATES` in the setup cell if your copy is elsewhere. The OCT data are not included.
 
 ## Reference and license
 
